@@ -1,17 +1,17 @@
 {
-  "name": "litecore-build",
+  "name": "garlicore-build",
   "version": "0.5.5",
-  "description": "A helper for common tasks to build litecore modules'",
+  "description": "A helper for common tasks to build garlicore modules'",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/litecoin-project/litecore-build"
+    "url": "git://github.com/garlicoin-project/garlicore-build"
   },
   "keywords": [
-    "litecore"
+    "garlicore"
   ],
   "contributors": [
     {
@@ -37,9 +37,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/litecoin-project/litecore-build/issues"
+    "url": "https://github.com/garlicoin-project/garlicore-build/issues"
   },
-  "homepage": "https://github.com/litecoin-project/litecore-build",
+  "homepage": "https://github.com/garlicoin-project/garlicore-build",
   "dependencies": {
     "brfs": "^1.2.0",
     "browserify": "~13.1.0",
