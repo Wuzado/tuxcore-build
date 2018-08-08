@@ -1,17 +1,17 @@
 {
-  "name": "garlicore-build",
+  "name": "tuxcore-build",
   "version": "0.5.5",
-  "description": "A helper for common tasks to build garlicore modules'",
+  "description": "A helper for common tasks to build tuxcore modules'",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/garlicoin-project/garlicore-build"
+    "url": "git://github.com/Wuzado/tuxcore-build"
   },
   "keywords": [
-    "garlicore"
+    "tuxcore"
   ],
   "contributors": [
     {
@@ -37,9 +37,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/garlicoin-project/garlicore-build/issues"
+    "url": "https://github.com/Wuzado/tuxcore-build/issues"
   },
-  "homepage": "https://github.com/garlicoin-project/garlicore-build",
+  "homepage": "https://github.com/Wuzado/tuxcore-build",
   "dependencies": {
     "brfs": "^1.2.0",
     "browserify": "~13.1.0",

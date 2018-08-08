@@ -17,8 +17,8 @@
  * </ul>`
  * <li> `browser` - generate files needed for browser (browserify)
  * <ul>
- * <li> `browser:uncompressed` - build uncomprssed browser bundle (`garlicore-*.js`)
- * <li> `browser:compressed` - build compressed browser bundle (`garlicore-*.min.js`)
+ * <li> `browser:uncompressed` - build uncomprssed browser bundle (`tuxcore-*.js`)
+ * <li> `browser:compressed` - build compressed browser bundle (`tuxcore-*.min.js`)
  * <li> `browser:maketests` - build `tests.js`, needed for testing without karma
  * </ul>`
  * <li> `lint` - run `jshint`
@@ -53,12 +53,12 @@ function startGulp(name, opts) {
 
   opts = opts || {};
   var browser = !opts.skipBrowser;
-  var fullname = name ? 'garlicore-' + name : 'garlicore';
+  var fullname = name ? 'tuxcore-' + name : 'tuxcore';
   var files = ['lib/**/*.js'];
   var tests = ['test/**/*.js'];
   var alljs = files.concat(tests);
 
-  var buildPath = './node_modules/garlicore-build/';
+  var buildPath = './node_modules/tuxcore-build/';
   var buildModulesPath = buildPath + 'node_modules/';
   var buildBinPath = buildPath + 'node_modules/.bin/';
 
@@ -102,9 +102,9 @@ function startGulp(name, opts) {
     var browserifyCommand;
 
     if (name !== 'lib') {
-      browserifyCommand = buildBinPath + 'browserify --require ./index.js:' + fullname + ' --external garlicore-lib -o ' + fullname + '.js';
+      browserifyCommand = buildBinPath + 'browserify --require ./index.js:' + fullname + ' --external tuxcore-lib -o ' + fullname + '.js';
     } else {
-      browserifyCommand = buildBinPath + 'browserify --require ./index.js:garlicore-lib -o garlicore-lib.js';
+      browserifyCommand = buildBinPath + 'browserify --require ./index.js:tuxcore-lib -o tuxcore-lib.js';
     }
 
     gulp.task('browser:uncompressed', shell.task([
@@ -293,7 +293,7 @@ function startGulp(name, opts) {
   });
 
   gulp.task('release:push', function(cb) {
-    git.push('garlicoin-project', 'master', {
+    git.push('tuxcoin-project', 'master', {
       args: ''
     }, cb);
   });
@@ -302,7 +302,7 @@ function startGulp(name, opts) {
     var pjson = require('../../package.json');
     var name = 'v' + pjson.version;
     git.tag(name, 'Release ' + name, function() {
-      git.push('garlicoin-project', name, cb);
+      git.push('tuxcoin-project', name, cb);
     });
   });
 
@@ -327,7 +327,7 @@ function startGulp(name, opts) {
       browser ? 'browser' : 'noop',
       // Commit 
       'release:build-commit',
-      // Run git push garlicoin-project $VERSION
+      // Run git push tuxcoin-project $VERSION
       'release:push-tag',
       // Run npm publish
       'release:publish',
